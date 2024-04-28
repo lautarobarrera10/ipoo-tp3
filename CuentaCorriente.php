@@ -16,12 +16,11 @@ Class CuentaCorriente extends Cuenta {
 
     /**
      * @param int $nroCuenta
-     * @param float $saldo
      * @param Cliente $objOwner
      * @param float $limiteDescubierto
      */
-    public function __construct($nroCuenta, $saldo, $objOwner, $limiteDescubierto){
-        parent::__construct($nroCuenta, $saldo, $objOwner);
+    public function __construct($nroCuenta, $objOwner, $limiteDescubierto){
+        parent::__construct($nroCuenta, $objOwner);
         $this->limiteDescubierto = $limiteDescubierto;
     }
 

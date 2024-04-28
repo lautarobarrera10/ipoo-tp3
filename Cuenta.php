@@ -18,13 +18,12 @@ Class Cuenta {
 
     /**
      * @param int $nroCuenta
-     * @param float $saldo
      * @param Cliente $objOwner
      */
-    public function __construct($nroCuenta, $saldo, $objOwner) {
+    public function __construct($nroCuenta, $objOwner) {
         $this->nroCuenta = $nroCuenta;
-        $this->saldo = $saldo;
         $this->objOwner = $objOwner;
+        $this->saldo = 0;
     }
 
     // Getters
@@ -104,7 +103,10 @@ Class Cuenta {
     public function realizarRetiro($monto){
         $saldoActual = $this->getSaldo();
         $nuevoSaldo = $saldoActual - $monto;
-        $this->setSaldo($nuevoSaldo);
+        // Si el monto supera el saldo actual, no realizamos el retiro.
+        if ($nuevoSaldo >= 0){
+            $this->setSaldo($nuevoSaldo);
+        }
         return $this->getSaldo();
     }
 }

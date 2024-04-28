@@ -14,10 +14,9 @@ Implementar los siguientes métodos en la clase:
 Class CajaDeAhorro extends Cuenta {
     /**
      * @param int $nroCuenta
-     * @param float $saldo
      * @param Cliente $objOwner
      */
-    public function __construct($nroCuenta, $saldo, $objOwner){
-        parent::__construct($nroCuenta, $saldo, $objOwner);
+    public function __construct($nroCuenta, $objOwner){
+        parent::__construct($nroCuenta, $objOwner);
     }
 }
