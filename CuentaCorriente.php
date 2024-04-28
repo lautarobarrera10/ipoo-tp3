@@ -21,6 +21,7 @@ Class CuentaCorriente extends Cuenta {
      */
     public function __construct($nroCuenta, $objOwner, $limiteDescubierto){
         parent::__construct($nroCuenta, $objOwner);
+        parent::setSaldo($limiteDescubierto);
         $this->limiteDescubierto = $limiteDescubierto;
     }
 
