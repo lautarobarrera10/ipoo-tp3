@@ -46,7 +46,13 @@ Class Venta {
         "Cliente: " . $this->getObjCliente();
     }
 
-    public function calcularImporteFinal(){
+    public function darImporteVenta(){
         // El importe final de una venta normal se calcula en base a la cantidad de productos, por el importe del producto.
+        $colProductos = $this->getColeccionObjProducto();
+        $importe = 0;
+        foreach($colProductos as $producto){
+            $importe += $producto->calcularPrecioVenta();
+        }
+        return $importe;
     }
 }

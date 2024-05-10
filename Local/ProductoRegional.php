@@ -22,8 +22,15 @@ Class ProductoRegional extends Producto{
 
     public function __toString(){
         $cadena = parent::__toString();
-        $cadena += "Descuento regional: " . $this->getDescuentoRegional() . "% \n";
+        $cadena .= "Descuento regional: " . $this->getDescuentoRegional() . "% \n";
         return $cadena;
+    }
+
+    public function calcularPrecioVenta(){
+        $precioVenta = parent::calcularPrecioVenta();
+        $descuento = $precioVenta * $this->getDescuentoRegional() / 100;
+        $precioVenta = $precioVenta - $descuento;
+        return $precioVenta;
     }
 }
 

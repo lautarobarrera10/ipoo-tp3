@@ -32,8 +32,8 @@ Class ProductoImportado extends Producto {
 
     public function __toString(){
         $cadena = parent::__toString();
-        $cadena += "Porcentaje por importación: " . $this->getPorcentajePorImportacion() . "%\n";
-        $cadena += "Porcentaje por impuestos: " . $this->getPorcentajePorImpuestos() . "%\n";
+        $cadena .= "Porcentaje por importación: " . $this->getPorcentajePorImportacion() . "%\n";
+        $cadena .= "Porcentaje por impuestos: " . $this->getPorcentajePorImpuestos() . "%\n";
         return $cadena;
     }
 
